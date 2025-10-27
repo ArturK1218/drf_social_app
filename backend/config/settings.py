@@ -52,6 +52,7 @@ THIRD_PARTY_APPS = [
 # Локальные приложения
 LOCAL_APPS = [
     'apps.users',
+    'apps.dialogs',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -147,11 +148,11 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
-AUTH_USER_MODEL = 'apps.users.User'
+AUTH_USER_MODEL = 'users.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 
     'DEFAULT_PERMISSION_CLASSES': (
