@@ -22,4 +22,5 @@ urlpatterns = [
     path('api/users/', include('apps.users.urls')),
     path('api/', include('apps.dialogs.urls')),
     path('api/posts/', include('apps.posts.urls')),
+    path('api/groups/', include('apps.groups.urls')),
 ]
