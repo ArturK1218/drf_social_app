@@ -39,7 +39,7 @@ class GroupViewSet(viewsets.ModelViewSet):
     def posts(self, request, pk=None):
         """Посты группы"""
         group = self.get_object()
-        posts = group.posts.order_by('-created_at')
+        posts = group.group_posts.order_by('-created_at')
         serializer = GroupPostSerializer(posts, many=True)
         return Response(serializer.data)
         
